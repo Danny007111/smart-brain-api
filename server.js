@@ -70,6 +70,8 @@ app.use(cors())
 // })
 
 
+app.get('/', (req, res)=> {res.send("It's working!")})
+
 app.post('/signin', (req, res) => {
     // Dependency injection!!!!!!!!  for handleSignin/Register to have db and bcrypt.!!!!!!!!!!!!!!!!!!!!!!
   signin.handleSignin(req, res, db, bcrypt)
@@ -104,8 +106,9 @@ app.post('/imageurl', (req, res) => {image.handleApiCall(req, res)})
 //     // res = false
 // });
 
-app.listen(3000, () => {
-    console.log('app is running on port 3000')
+// Heroku or // other // wants access and its not port 3000 because its not using your computer to store data. so we need to change that. (|otherwise do PORT 3000|)
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`app is running on port ${process.env.PORT}`)
 })
 
 /*
