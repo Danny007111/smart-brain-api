@@ -6,10 +6,15 @@ const cors = require('cors');
 const knex = require('knex');
 
 // ---Code review, cleaning up code moving each function to controller folder---------------------------------------------------------------------
-const register = require('./controllers/register');
-const signin = require('./controllers/signin');
-const profile = require('./controllers/profile');
+// const register = require('./controllers/register');
+// const signin = require('./controllers/signin');
+// const profile = require('./controllers/profile');
 const image = require('./controllers/image');
+
+import register from "./controllers/register.js";
+import signin from "./controllers/signin";
+import profile from "./controllers/profile";
+// import image from "./controllers/image";
 
 // ------------------------------------------------------------------------
 

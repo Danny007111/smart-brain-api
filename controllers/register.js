@@ -38,4 +38,4 @@ const handleRegister = (req, res, db, bcrypt) => {
 //    };
 // ------------------------------------------------------------------------
 // After node-fetch rep installed...
-export default registerHandler;
+export default handleRegister;
