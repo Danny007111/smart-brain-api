@@ -12,8 +12,8 @@ const knex = require('knex');
 const image = require('./controllers/image');
 
 import register from "./controllers/register.js";
-import signin from "./controllers/signin";
-import profile from "./controllers/profile";
+import signin from "./controllers/signin.js";
+import profile from "./controllers/profile.js";
 // import image from "./controllers/image";
 
 // ------------------------------------------------------------------------
