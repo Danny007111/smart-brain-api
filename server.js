@@ -1,9 +1,14 @@
-const express = require('express');
+// const express = require('express');
 // --important hash password for security ---VVVVV
-const bcrypt = require('bcrypt-nodejs'); 
-const cors = require('cors');
+// const bcrypt = require('bcrypt-nodejs'); 
+// const cors = require('cors');
 // Conecting to DataBase ---V
-const knex = require('knex');
+// const knex = require('knex');
+
+import express from "express";
+import bcrypt from "bcrypt-nodejs";
+import cors from "cors";
+import knex from "knex";
 
 // ---Code review, cleaning up code moving each function to controller folder---------------------------------------------------------------------
 // const register = require('./controllers/register');
@@ -14,7 +19,7 @@ const image = require('./controllers/image');
 import register from "./controllers/register.js";
 import signin from "./controllers/signin.js";
 import profile from "./controllers/profile.js";
-// import image from "./controllers/image";
+// import image from "./controllers/image.js";
 
 // ------------------------------------------------------------------------
 
