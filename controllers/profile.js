@@ -60,7 +60,8 @@ const handleProfileGet = (req, res, db)=> {
 
 }
 
-module.exports = {
-    // dont need de-value
-    handleProfileGet
-   };
+// module.exports = {
+//     // dont need de-value
+//     handleProfileGet
+//    };
+export default handleProfileGet;

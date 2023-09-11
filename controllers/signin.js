@@ -41,8 +41,8 @@ const handleSignin = (req, res, db, bcrypt)=> {
 }
 
 // ---Code review, exporting each CRUD function---------------------------------------------------------------------
-module.exports = {
-    handleSignin: handleSignin
-   };
+// module.exports = {
+//     handleSignin: handleSignin
+//    };
    // ------------------------------------------------------------------------
-   
+export default handleSignin;
