@@ -1,6 +1,6 @@
 // --------------------------(Adding security key -Changing CLarifai api to back-end to keep it safe- )----------------------------------------------+++
 
-import { ClarifaiStub, grpc } from "clarifai-nodejs-grpc";
+const { ClarifaiStub, grpc } = require("clarifai-nodejs-grpc");
 
 //  Used this ---VVVV----- to figure out face-detect-model number in clarifai...
 // const Clarifai = require("clarifai");
