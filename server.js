@@ -11,12 +11,12 @@ import cors from "cors";
 import knex from "knex";
 
 // ---Code review, cleaning up code moving each function to controller folder---------------------------------------------------------------------
-// const register = require('./controllers/register');
+const register = require('./controllers/register');
 // const signin = require('./controllers/signin');
 // const profile = require('./controllers/profile');
 // const image = require('./controllers/image');
 
-import register from "./controllers/register.js";
+// import register from "./controllers/register.js";
 import signin from "./controllers/signin.js";
 import profile from "./controllers/profile.js";
 import image from "./controllers/image.js";

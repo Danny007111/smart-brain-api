@@ -33,9 +33,9 @@ const handleRegister = (req, res, db, bcrypt) => {
 }
 
 // ---Code review, exporting each CRUD function---------------------------------------------------------------------
-// module.exports = {
-//     handleRegister: handleRegister   
-//    };
+module.exports = {
+    handleRegister: handleRegister   
+   };
 // ------------------------------------------------------------------------
 // After node-fetch rep installed...
-export default handleRegister;
+// export default handleRegister;
