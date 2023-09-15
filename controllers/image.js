@@ -42,6 +42,7 @@ const handleApiCall = (req, res) => {
 
             // Since we have one input, one output will exist here
             const output = response.outputs[0];
+            console.log(response.outputs[0])
     
             console.log("Predicted concepts:");
             for (const concept of output.data.concepts) {

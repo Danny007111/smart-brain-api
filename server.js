@@ -99,7 +99,7 @@ app.get('/profile/:id', (req, res) => {profile.handleProfileGet(req, res, db)})
 // updated post
 app.put('/image', (req, res) => {image.handleImage(req, res, db)})
 
-// -----DID NOT COMPLETE---------------------(Adding security key -Changing CLarifai api to back-end to keep it safe- )----------------------------------------------+++
+// -------------------------(Adding security key -Changing CLarifai api to back-end to keep it safe- )----------------------------------------------+++
 app.post('/imageurl', (req, res) => {image.handleApiCall(req, res)})
 
 // ------------------------------------------------------------------------+++
