@@ -7,15 +7,13 @@ const { ClarifaiStub, grpc } = require("clarifai-nodejs-grpc");
 // console.log(Clarifai)
 
 // ___________________________________________
-const PAT = '3113f221360c4d4791d3ffcd4725c74a';
-const USER_ID = 'danny007111';
-const APP_ID = 'my-first-application-60g1nn';
+
 const MODEL_ID = 'face-detection';
 const MODEL_VERSION_ID = '6dc7e46bc9124c5c8824be4822abe105';
 // ___________________________________________
 const stub = ClarifaiStub.grpc();
 const metadata = new grpc.Metadata();
-metadata.set("authorization", "Key " + PAT);
+metadata.set("authorization", "Key " + process.env.PAT);
 
 const handleApiCall = (req, res) => {
     
@@ -24,8 +22,8 @@ const handleApiCall = (req, res) => {
     stub.PostModelOutputs(
         {
             user_app_id: {
-                "user_id": USER_ID,
-                "app_id": APP_ID
+                "user_id": process.env.USER_ID,
+                "app_id": process.env.APP_ID
             },
             model_id: MODEL_ID,
             version_id: MODEL_VERSION_ID, // This is optional. Defaults to the latest model version
