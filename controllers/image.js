@@ -7,23 +7,27 @@ const { ClarifaiStub, grpc } = require("clarifai-nodejs-grpc");
 // console.log(Clarifai)
 
 // ___________________________________________
-
+// const PAT = '';
+// const USER_ID = '';
+// const APP_ID = '';
 const MODEL_ID = 'face-detection';
 const MODEL_VERSION_ID = '6dc7e46bc9124c5c8824be4822abe105';
 // ___________________________________________
 const stub = ClarifaiStub.grpc();
 const metadata = new grpc.Metadata();
+
 metadata.set("authorization", "Key " + process.env.PAT);
+// (Local)metadata.set("authorization", "Key " + PAT);
 
 const handleApiCall = (req, res) => {
-    
-    console.log(req.body.input)
     
     stub.PostModelOutputs(
         {
             user_app_id: {
                 "user_id": process.env.USER_ID,
                 "app_id": process.env.APP_ID
+                // "user_id": process.env.USER_ID,
+                // "app_id": process.env.APP_ID
             },
             model_id: MODEL_ID,
             version_id: MODEL_VERSION_ID, // This is optional. Defaults to the latest model version
@@ -41,13 +45,8 @@ const handleApiCall = (req, res) => {
             }
 
             // Since we have one input, one output will exist here
-            const output = response.outputs[0];
-            console.log(response.outputs[0])
+            // const output = response.outputs[0];
     
-            console.log("Predicted concepts:");
-            for (const concept of output.data.concepts) {
-                console.log(concept.name + " " + concept.value);
-            }
             res.json(response);
         }
     );

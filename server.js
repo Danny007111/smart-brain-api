@@ -23,19 +23,32 @@ const image = require('./controllers/image');
 
 // ------------------------------------------------------------------------
 
-const db = knex({
-    client: 'pg',
-    connection: {
-      connectionString : process.env.DATABASE_URL,
-      ssl: { rejectUnauthorized: false },
-      host : process.env.DATABASE_HOST,
-      port : 5432,
-      user : process.env.DATABASE_USER,
-      password : process.env.DATABASE_PW,
-      database : process.env.DATABASE_DB
-    }
-  });
+  const db = knex({
+      client: 'pg',
+      connection: {
+        connectionString : process.env.DATABASE_URL,
+        ssl: { rejectUnauthorized: false },
+        host : process.env.DATABASE_HOST,
+        port : 5432,
+        user : process.env.DATABASE_USER,
+        password : process.env.DATABASE_PW,
+        database : process.env.DATABASE_DB
+      }
+    });
 
+// -------------------Connect to own database-----------------------------------------------------
+// const db = knex({
+//   // connect to your own database here:
+//   client: 'pg',
+//   connection: {
+//     host : '127.0.0.1',
+//     user : '',
+//     password : '',
+//     database : ''
+//   }
+// });
+
+// ------------------------------------------------------------------------
 //   to show each user in db table 'users' but first make sure db is online connected and reload after npm start for it to work.
 // db.select('*').from('users').then(data => {
 //     console.log(data)
