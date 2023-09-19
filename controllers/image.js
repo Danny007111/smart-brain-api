@@ -7,9 +7,9 @@ const { ClarifaiStub, grpc } = require("clarifai-nodejs-grpc");
 // console.log(Clarifai)
 
 // ___________________________________________
-// const PAT = '';
-// const USER_ID = '';
-// const APP_ID = '';
+const PAT = '3113f221360c4d4791d3ffcd4725c74a';
+const USER_ID = 'danny007111';
+const APP_ID = 'my-first-application-60g1nn';
 const MODEL_ID = 'face-detection';
 const MODEL_VERSION_ID = '6dc7e46bc9124c5c8824be4822abe105';
 // ___________________________________________
