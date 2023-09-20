@@ -5,11 +5,8 @@ const { ClarifaiStub, grpc } = require("clarifai-nodejs-grpc");
 //  Used this ---VVVV----- to figure out face-detect-model number in clarifai...
 // const Clarifai = require("clarifai");
 // console.log(Clarifai)
-
 // ___________________________________________
-const PAT = '3113f221360c4d4791d3ffcd4725c74a';
-const USER_ID = 'danny007111';
-const APP_ID = 'my-first-application-60g1nn';
+
 const MODEL_ID = 'face-detection';
 const MODEL_VERSION_ID = '6dc7e46bc9124c5c8824be4822abe105';
 // ___________________________________________
@@ -26,8 +23,6 @@ const handleApiCall = (req, res) => {
             user_app_id: {
                 "user_id": process.env.USER_ID,
                 "app_id": process.env.APP_ID
-                // "user_id": process.env.USER_ID,
-                // "app_id": process.env.APP_ID
             },
             model_id: MODEL_ID,
             version_id: MODEL_VERSION_ID, // This is optional. Defaults to the latest model version
@@ -43,17 +38,14 @@ const handleApiCall = (req, res) => {
             if (response.status.code !== 10000) {
                 throw new Error("Post model outputs failed, status: " + response.status.description);
             }
-
             // Since we have one input, one output will exist here
             // const output = response.outputs[0];
-    
             res.json(response);
         }
     );
   }
 
 // ------------------------------------------------------------------------+++
-
 
 const handleImage = (req, res, db) => {
     // ------------------------------------------------------------------------+++
